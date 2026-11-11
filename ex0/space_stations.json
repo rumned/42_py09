@@ -22,7 +22,7 @@
   {
     "station_id": "ISS674",
     "name": "Europa Research Station",
-    "crew_size": 11,
+    "crew_size": 110,
     "power_level": 82.0,
     "oxygen_level": 91.4,
     "last_maintenance": "2023-10-21T00:00:00",

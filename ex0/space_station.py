@@ -24,7 +24,7 @@ def main():
                 for k, v in s:
                     print(f"{k}: {v}")
             except ValidationError as e:
-                print(e)
+                print(e.errors()[0]["msg"])
             print('=' * 20)
     except Exception as e:
         print(e)
