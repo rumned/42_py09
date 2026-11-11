@@ -1,5 +1,5 @@
 #!usr/bin/env/python3
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class SpaceStation(BaseModel):
     station_id: str = Field(..., min_length=3, max_length=10)
