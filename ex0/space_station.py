@@ -1,5 +1,6 @@
 #!usr/bin/env/python3
-from pydantic import BaseModel, Field
+import json
+from pydantic import BaseModel, Field, ValidationError
 from datetime import datetime
 
 class SpaceStation(BaseModel):
@@ -10,5 +11,25 @@ class SpaceStation(BaseModel):
     oxygen_level: float = Field(..., ge=0.0, le=100.0)
     last_maintenance: datetime
     is_operational: bool = True
-    notes: str = Field(default='n/a', max_length=200)
-    
+    notes: str | None = Field(default='n/a', max_length=200)
+
+
+def main():
+    try:
+        with open('space_stations.json') as f:
+            data = json.load(f)
+        for item in data:
+            try:
+                s = SpaceStation.model_validate(item)
+                for k, v in s:
+                    print(f"{k}: {v}")
+            except ValidationError as e:
+                print(e)
+            print('=' * 20)
+    except Exception as e:
+        print(e)
+
+
+if __name__ == '__main__':
+    main()
+
