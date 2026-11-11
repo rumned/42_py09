@@ -6,9 +6,9 @@ import json
 
 
 class ContactType(str, Enum):
-    RADIO = 'radio',
-    VISUAL = 'visual',
-    PHYSICAL = 'physical',
+    RADIO = 'radio'
+    VISUAL = 'visual'
+    PHYSICAL = 'physical'
     TELEPATHIC = 'telepathic'
 
 
@@ -39,7 +39,7 @@ class AlienContact(BaseModel):
             raise ValueError(
                 'Telepathic contact requires at least 3 witnesses'
             )
-        if self.signal_strength > 7.0 and self.message_received is None:
+        if self.signal_strength > 7.0 and not self.message_received:
             raise ValueError(
                 'Strong signals (> 7.0) must include a received message'
             )

@@ -6,10 +6,10 @@ from enum import Enum
 
 
 class Rank(str, Enum):
-    CADET = 'cadet',
-    OFFICER = 'officer',
-    LIEUTENANT = 'lieutenant',
-    CAPTAIN = 'captain',
+    CADET = 'cadet'
+    OFFICER = 'officer'
+    LIEUTENANT = 'lieutenant'
+    CAPTAIN = 'captain'
     COMMANDER = 'commander'
 
 
@@ -53,7 +53,7 @@ class SpaceMission(BaseModel):
                 if member.years_experience >= 5:
                     has_experience += 1
             if not has_experience >= crew_headcount/2:
-                raise ValueError('Long missions need 50%% experienced crew')
+                raise ValueError('Long missions need 50% experienced crew')
         return self
 
 
