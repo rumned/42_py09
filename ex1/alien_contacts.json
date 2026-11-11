@@ -14,12 +14,12 @@
     "contact_id": "AC_2024_002",
     "timestamp": "2024-08-20T00:00:00",
     "location": "Mauna Kea Observatory, Hawaii",
-    "contact_type": "radio",
-    "signal_strength": 5.6,
+    "contact_type": "physical",
+    "signal_strength": 8.8,
     "duration_minutes": 152,
     "witness_count": 6,
-    "message_received": null,
-    "is_verified": false
+    "message_received": "Let's party",
+    "is_verified": true
   },
   {
     "contact_id": "AC_2024_003",
@@ -28,7 +28,7 @@
     "contact_type": "telepathic",
     "signal_strength": 4.5,
     "duration_minutes": 19,
-    "witness_count": 14,
+    "witness_count": 10,
     "message_received": null,
     "is_verified": false
   },

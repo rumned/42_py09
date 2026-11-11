@@ -1,7 +1,8 @@
-#!usr/bin/env/python3
+#!/usr/bin/env python3
 import json
 from pydantic import BaseModel, Field, ValidationError
 from datetime import datetime
+
 
 class SpaceStation(BaseModel):
     station_id: str = Field(..., min_length=3, max_length=10)
@@ -14,7 +15,7 @@ class SpaceStation(BaseModel):
     notes: str | None = Field(default='n/a', max_length=200)
 
 
-def main():
+def main() -> None:
     try:
         with open('space_stations.json') as f:
             data = json.load(f)
@@ -32,4 +33,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
